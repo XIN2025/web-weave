@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Link, useNavigate } from "react-router-dom";
-import { handleError } from "@/utils/handleError";
+
 import { useSignupMutation } from "@/redux/slices/api";
 import { useDispatch } from "react-redux";
 import { updateCurrentUser, updateIsLoggedIn } from "@/redux/slices/appSlice";
@@ -44,7 +44,8 @@ export default function Signup() {
       dispatch(updateIsLoggedIn(true));
       navigate("/");
     } catch (error: unknown) {
-      console.log(error);
+      //@ts-expect-error erorr type unknown
+      toast.error(error.data.message);
     }
   }
   return (
