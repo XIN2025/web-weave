@@ -9,7 +9,7 @@
     "build": "npm run build:server && npm run build:client",
     "start": "node index.js",
     "build:server": "tsc ",
-    "build:client": " cd.. && cd client && npm run build"
+    "build:client": " cd ../client && npm run build"
   },
   "keywords": [],
   "author": "",
